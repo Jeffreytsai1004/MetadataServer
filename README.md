@@ -16,7 +16,7 @@ ASP.NET Core Runtime 3.1 托管捆绑包或更高版本。
 ---------------------------
 1 Clone此工程到本地
 
-2 修改appsettings.json,将MySqlConnection修改为你自己的Mysql服务器
+2 修改appsettings.json,将MySqlConnection修改为你自己的Mysql数据库的连接信息
 
 3 将镜像发布到Dockerhub
 
