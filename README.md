@@ -11,6 +11,7 @@ This is a custom version of the metadata server (a component of [UnrealGameSync]
 这是元数据服务器（[UnrealGameSync](https://docs.unrealengine.com/en-US/ProductionPipelines/DeployingTheEngine/UnrealGameSync/index.html)的组件）的自定义版本，更新到 .Net 8.0，具有异步/等待功能, 
 
 更新了MySQL `utf8mb4` 编码格式
+
 ![image](https://github.com/Jeffreytsai1004/MetadataServer/assets/109943015/1f89bd0c-0bf0-4947-beb1-e2110a8c7b29)
 
 Requirements
