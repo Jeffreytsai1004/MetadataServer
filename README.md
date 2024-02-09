@@ -29,18 +29,13 @@ Deploy Steps
 
 2 安装 [.NET 8.0 SDK](https://dotnet.microsoft.com/zh-cn/download/dotnet/8.0),在开发PC上安装SDK,在网页服务器上安装 Hosting Bundle 
 
+3 Modify appsettings.json, and change MySqlConnection to the connection information of your own Mysql database
 
-2 Modify appsettings.json, and change MySqlConnection to the connection information of your own Mysql database
+3 修改appsettings.json,将MySqlConnection字符串修改为你自己的Mysql数据库的连接信息
 
-2 修改appsettings.json,将MySqlConnection字符串修改为你自己的Mysql数据库的连接信息
+4 Publish the image to Dockerhub or IIS
 
-3 Publish the image to Dockerhub
-
-3 将镜像发布到Dockerhub
-
-4 Deploy the image in Docker or IIS
-
-4 在IIS或者Docker中部署
+4 发布到 Docker 或者 IIS
 
 Licensing
 许可
