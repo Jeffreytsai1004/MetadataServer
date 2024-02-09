@@ -20,9 +20,15 @@ Requirements
 Deploy Steps
 部署步骤
 ---------------------------
+
 1 Clone this project to the local
 
 1 Clone此工程到本地
+
+2 Install [.NET 8.0 SDK](https://dotnet.microsoft.com/zh-cn/download/dotnet/8.0),Install the SDK on the development PC and the Hosting Bundle on the web server
+
+2 安装 [.NET 8.0 SDK](https://dotnet.microsoft.com/zh-cn/download/dotnet/8.0),在开发PC上安装SDK,在网页服务器上安装 Hosting Bundle 
+
 
 2 Modify appsettings.json, and change MySqlConnection to the connection information of your own Mysql database
 
