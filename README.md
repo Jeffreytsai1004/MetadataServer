@@ -13,9 +13,9 @@ This is a custom version of the metadata server (a component of [UnrealGameSync]
 Requirements
 要求
 ---------------------------
-ASP.NET Core Runtime 3.1 Hosting Bundle or higher.
+.NET Runtime 8.0 Hosting Bundle or higher.
 
-ASP.NET Core Runtime 3.1 托管捆绑包或更高版本。
+.NET Runtime 8.0 托管捆绑包或更高版本。
 
 Deploy Steps
 部署步骤
@@ -26,15 +26,15 @@ Deploy Steps
 
 2 Modify appsettings.json, and change MySqlConnection to the connection information of your own Mysql database
 
-2 修改appsettings.json,将MySqlConnection修改为你自己的Mysql数据库的连接信息
+2 修改appsettings.json,将MySqlConnection字符串修改为你自己的Mysql数据库的连接信息
 
 3 Publish the image to Dockerhub
 
 3 将镜像发布到Dockerhub
 
-4 Deploy the image in Docker
+4 Deploy the image in Docker or IIS
 
-4 在Docker中部署镜像
+4 在IIS或者Docker中部署
 
 Licensing
 许可
