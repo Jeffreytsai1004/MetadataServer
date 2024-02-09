@@ -1,3 +1,5 @@
 is_global = true
 build_property.RootNamespace = MetadataServer
-build_property.ProjectDir = E:\ASPNetCore\MetadataServer\MetadataServer\
+build_property.ProjectDir = E:\Development\MetadataServer\MetadataServer\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
