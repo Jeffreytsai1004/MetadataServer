@@ -61,6 +61,10 @@ Deploy Steps
   ```
   dotnet --info
   ```
+  拉取 ASP .NET 8.0 镜像 
+  ```
+  docker pull mcr.microsoft.com/dotnet/aspnet:8.0
+  ```
   返回用户根目录
   ```
   cd ~
@@ -70,9 +74,8 @@ Deploy Steps
   mkdir MetadataServer
   cd MetadataServer
   ```
-  拉取该镜像 
-  ```
-  docker pull https://github.com/Jeffreytsai1004/MetadataServer ./
+  拉取该仓库
+  git clone https://github.com/Jeffreytsai1004/MetadataServer ./
   ```
   修改./MetadataServer/MetadataServer/appsettings.json 按i键编辑修改 "MySqlConnection": 为你的MySQL的服务器ID和端口号，以及用户名和密码. Exit键退出编辑， ：wq 保存并退出
   ```
@@ -102,7 +105,7 @@ Deploy Steps
   ```
   启动镜像
   ```
-  sudo docker run --name metadataserver --restart always -p 8080:80 DOCKERHUBUSERNAME/metadataserver:latest
+  sudo docker run --name metadataserver --restart always -p 8080:8080 DOCKERHUBUSERNAME/metadataserver:latest
   ```
   进入容器
   ```
