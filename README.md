@@ -106,7 +106,7 @@ Deploy Steps
   ```
   启动镜像
   ```
-  sudo docker run --name metadataserver --restart always -p 8080:80 8081:443 DOCKERHUBUSERNAME/metadataserver:latest
+  sudo docker run --name metadataserver --restart always -p 8080:80 DOCKERHUBUSERNAME/metadataserver:latest
   ```
   进入容器
   ```
