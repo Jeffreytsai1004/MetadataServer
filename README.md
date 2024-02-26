@@ -100,7 +100,11 @@ Deploy Steps
   ```
   启动镜像（这里$DOCKERHUBUSERNAME为你的Dockerhub账号,并且可以修改你的MYSQL的对应的MySqlConnection字符串
   ```
-  docker run -d --name metadataserver --restart always -p 8080:8080 -e MySqlConnection:"server=MYSQLSERVERID;port=PORT;UserId=USERNAME;password=PASSWORD;" $DOCKERHUBUSERNAME/latest:latest
+  docker run -d --name metadataserver --restart always -p 8080:8080 -e MySqlConnection:"server=MYSQLSERVERID;port=PORT;UserId=USERNAME;password=PASSWORD;" $DOCKERHUBUSERNAME/metadataserver:latest
+  ```
+  推送镜像
+  ```
+  docker push $DOCKERHUBUSERNAME/metadataserver:latest
   ```
   进入容器
   ```
