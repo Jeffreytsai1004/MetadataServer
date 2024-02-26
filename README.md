@@ -86,7 +86,7 @@ Deploy Steps
   ```
   "applicationUrl": "http://localhost:8080"
   ```
-  构建镜像
+  构建镜像（这里$DOCKERHUBUSERNAME为你的Dockerhub账号）
   ```
   sudo docker build -t $DOCKERHUBUSERNAME/metadataserver:latest .
   ```
@@ -94,13 +94,13 @@ Deploy Steps
   ```
   docker images
   ```
-  登录DokerHub
+  登录DokerHub（用$DOCKERHUBUSERNAME账号登录）
   ```
   docker login
   ```
-  启动镜像
+  启动镜像（这里$DOCKERHUBUSERNAME为你的Dockerhub账号,并且可以修改你的MYSQL的对应的MySqlConnection字符串
   ```
-  docker run -d --name metadataserver --restart always -p 8080:8080 $DOCKERHUBUSERNAME/latest:latest
+  docker run -d --name metadataserver --restart always -p 8080:8080 -e MySqlConnection:"server=MYSQLSERVERID;port=PORT;UserId=USERNAME;password=PASSWORD;" $DOCKERHUBUSERNAME/latest:latest
   ```
   进入容器
   ```
