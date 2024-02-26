@@ -74,17 +74,13 @@ Deploy Steps
   ```
   docker pull https://github.com/Jeffreytsai1004/MetadataServer ./
   ```
-  构建镜像先拷贝Docker文件到MetadataServer的底层目录
+  修改./MetadataServer/MetadataServer/appsettings.json 按i键编辑修改 "MySqlConnection": 为你的MySQL的服务器ID和端口号，以及用户名和密码. Exit键退出编辑， ：wq 保存并退出
   ```
-  copy ./MetadataServer/Dockerfile ./Dockerfile
-  ```
-  修改./MetadataServer/appsettings.json 按i键编辑修改 "MySqlConnection": 为你的MySQL的服务器ID和端口号，以及用户名和密码. Exit键退出编辑， ：wq 保存并退出
-  ```
-  vi ./MetadataServer/appsettings.json
+  vi ./MetadataServer/MetadataServer/appsettings.json
   ```
   修改./MetadataServer/Properties/launchSettings.json 按i键编辑修改 "applicationUrl":为启动的端口号如：
   ```
-  "applicationUrl": "https://localhost:8081;http://localhost:8080"
+  "applicationUrl": "http://localhost:8080"
   ```
   构建镜像
   ```
