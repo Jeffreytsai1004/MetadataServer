@@ -88,25 +88,19 @@ Deploy Steps
   ```
   构建镜像
   ```
-  sudo docker build -t DOCKERHUBUSERNAME/metadataserver:latest .
+  sudo docker build -t $DOCKERHUBUSERNAME/metadataserver:latest .
   ```
   查看构建的镜像：
   ```
   docker images
   ```
-  新建文件存储路径
+  登录DokerHub
   ```
-  cd ~
-  mkdir ~/www/mwetadaserver
-  chmod 777 ~/www/mwetadaserver
-  mkdir ~/www/mwetadaserver/app
-  chmod 777 ~/www/mwetadaserver/app
-  mkdir ~/www/mwetadaserver/app/publish
-  chmod 777 ~/www/mwetadaserver/app/publish
+  docker login
   ```
   启动镜像
   ```
-  sudo docker run --name metadataserver --restart always -p 8080:8080 DOCKERHUBUSERNAME/metadataserver:latest
+  docker run -d --name metadataserver --restart always -p 8080:8080 $DOCKERHUBUSERNAME/latest:latest
   ```
   进入容器
   ```
