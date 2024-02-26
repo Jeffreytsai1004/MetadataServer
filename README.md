@@ -41,6 +41,82 @@ Deploy Steps
 
 4 发布到 Docker 或者 IIS
 
+6 在Linux中部署与构建镜像 
+  安装 .NET 8.0 的 SDK 和 Runtime
+  ```
+  mkdir dotnet
+  cd dotnet
+  wegt https://download.visualstudio.microsoft.com/download/pr/d6d79cc3-df2f-4680-96ff-a7198f461139/df025000eaf5beb85d9137274a8c53ea/aspnetcore-runtime-8.0.2-linux-x64.tar.gz
+  mkdir -p $HOME/dotnet && tar zxf aspnetcore-runtime-8.0.2-linux-x64.tar.gz -C $HOME/dotnet
+  export DOTNET_ROOT=$HOME/dotnet
+  export PATH=$PATH:$HOME/dotnet
+  rm aspnetcore-runtime-8.0.2-linux-x64.tar.gz
+  wget https://download.visualstudio.microsoft.com/download/pr/85bcc525-4e9c-471e-9c1d-96259aa1a315/930833ef34f66fe9ee2643b0ba21621a/dotnet-sdk-8.0.201-linux-x64.tar.gz
+  mkdir -p $HOME/dotnet && tar zxf dotnet-sdk-8.0.201-linux-x64.tar.gz -C $HOME/dotnet
+  export DOTNET_ROOT=$HOME/dotnet
+  export PATH=$PATH:$HOME/dotnet
+  rm dotnet-sdk-8.0.201-linux-x64.tar.gz
+  ```
+  查看 .NET 的SDK和RUNTIME
+  ```
+  dotnet --info
+  ```
+  返回用户根目录
+  ```
+  cd ~
+  ```
+  先新建一个目录
+  ```
+  mkdir MetadataServer
+  cd MetadataServer
+  ```
+  拉取该镜像 
+  ```
+  docker pull https://github.com/Jeffreytsai1004/MetadataServer ./
+  ```
+  构建镜像先拷贝Docker文件到MetadataServer的底层目录
+  ```
+  copy ./MetadataServer/Dockerfile ./Dockerfile
+  ```
+  修改./MetadataServer/appsettings.json 按i键编辑修改 "MySqlConnection": 为你的MySQL的服务器ID和端口号，以及用户名和密码. Exit键退出编辑， ：wq 保存并退出
+  ```
+  vi ./MetadataServer/appsettings.json
+  ```
+  修改./MetadataServer/Properties/launchSettings.json 按i键编辑修改 "applicationUrl":为启动的端口号如：
+  ```
+  "applicationUrl": "https://localhost:8081;http://localhost:8080"
+  ```
+  构建镜像
+  ```
+  sudo docker build -t DOCKERHUBUSERNAME/metadataserver:latest .
+  ```
+  查看构建的镜像：
+  ```
+  docker images
+  ```
+  新建文件存储路径
+  ```
+  cd ~
+  mkdir ~/www/mwetadaserver
+  chmod 777 ~/www/mwetadaserver
+  mkdir ~/www/mwetadaserver/app
+  chmod 777 ~/www/mwetadaserver/app
+  mkdir ~/www/mwetadaserver/app/publish
+  chmod 777 ~/www/mwetadaserver/app/publish
+  ```
+  启动镜像
+  ```
+  sudo docker run --name metadataserver --restart always -p 8080:80 8081:443 DOCKERHUBUSERNAME/metadataserver:latest
+  ```
+  进入容器
+  ```
+  sudo docker exec -it metadataserver /bin/bash
+  ```
+  退出容器
+  ```
+  exit
+  ```
+
 Licensing
 许可
 ---------------------------
