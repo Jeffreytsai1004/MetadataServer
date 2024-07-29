@@ -1,10 +1,11 @@
-<h1 align="center">
+![image](https://github.com/user-attachments/assets/e83c4a85-35af-4f05-a84c-c7f8a27f7f34)<h1 align="center">
   <br>
     MetadataServer For UnrealGameSync
   <br>
 </h1>
 
-![screenshot](https://docs.unrealengine.com/4.26/Images/ProductionPipelines/DeployingTheEngine/UnrealGameSync/QuickStart/UGSQS_Step1_EndResult-2.webp)
+![image](https://github.com/user-attachments/assets/7a141f7f-221d-4423-bcfd-a61d92f8d6db)
+
 
 This is a custom version of the metadata server (a component of [UnrealGameSync](https://docs.unrealGameSync.com/en-US/ProductionPipelines/DeployingTheEngine/UnrealGameSync/index.html) ), updated to ASP.Net Core 3.1, with async/await
 
